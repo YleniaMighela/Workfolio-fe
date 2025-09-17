@@ -1,9 +1,14 @@
-
 // importo react-router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// importo il layout
+import DefaultLayout from "./layout/DefaultLayout";
 
-import ProjectList from "./components/ProjectList";
+// importo i componenti
+import ProjectDetail from "./components/ProjectDetail/ProjectDetail"
+import ProjectList from "./components/ProjectList/ProjectList";
+
+// importo le paginr
 import HomePage from "./pages/HomePage";
 
 function App() {
@@ -12,13 +17,13 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          {/* <Route element={<DefaultLayout />} > */}
-          <Route path="/" element={<HomePage />} />
-          <Route path="/projects" element={<ProjectList />} />
-          {/* <Route path="/progetti/:id" element={<ProjectCard />} />
-            <Route path="/aboutme" element={<AboutMe />} /> */}
+          <Route element={<DefaultLayout />} >
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects" element={<ProjectList />} />
+            <Route path="/projects/:id" element={<ProjectDetail />} />
+            {/* <Route path="/aboutme" element={<AboutMe />} /> */}
 
-          {/* </Route> */}
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
