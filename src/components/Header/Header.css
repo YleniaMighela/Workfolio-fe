@@ -1,0 +1,37 @@
+.container_header {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+    margin: 25px;
+    font-size: 20px;
+    color: chartreuse;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1e90ff;
+
+}
+
+
+.link {
+    margin: 20px;
+    color: rgb(206, 16, 206);
+    font-size: 60px;
+}
+
+.link:hover {
+    color: orange;
+}
