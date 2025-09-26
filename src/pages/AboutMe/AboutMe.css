@@ -1,0 +1,17 @@
+.container-about {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    max-width: 35%;
+    box-sizing: border-box;
+}
+
+.container-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    line-height: 1.3;
+
+}
