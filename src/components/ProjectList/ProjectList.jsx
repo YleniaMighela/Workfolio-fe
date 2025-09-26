@@ -17,7 +17,7 @@ export default function ProjectList() {
     return (
         <div className="carousel-container">
 
-            {/* motion permette di trascinare orizzontalmete il contenitore (in questo caso avendo 3 progetti il "carosello" non si vede)*/}
+            {/* motion permette di trascinare orizzontalmete il contenitore (in questo caso avendo 3 progetti il "carosello" non è ricco, ma i progetti possono comunque spostarsi tenendo premuto tra i due progetti)*/}
             <motion.div
                 className="carousel-track"
                 drag="x"      // attiva il drag solo sull'asse orizzontale

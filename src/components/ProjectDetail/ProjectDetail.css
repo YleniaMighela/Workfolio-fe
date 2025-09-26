@@ -1,82 +1,133 @@
 .project-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 900px;
     margin: 40px auto;
     padding: 30px;
-    border: 3px solid black;
     border-radius: 12px;
-    background: #e06a6a;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    background: #fff9c4;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     text-align: center;
+    color: #1b3a2f;
 }
 
 .project-detail h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: black;
+    color: #1b3a2f;
 }
 
 .back-button {
     display: inline-block;
-    margin-bottom: 20px;
-    padding: 8px 14px;
-    background-color: rgb(228, 146, 228);
-    border: 2px solid black;
-    border-radius: 8px;
+    margin-bottom: 25px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #ffd9b3, #fff9c4, #b9f1c0);
+    transform: translateY(-2px);
+    border-radius: 10px;
     text-decoration: none;
-    color: black;
+    color: #1b3a2f;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
 }
 
 .back-button:hover {
-    background-color: rgb(210, 120, 210);
+    background: linear-gradient(135deg, #ffd9b3, #fff9c4, #b9f1c0);
     transform: translateY(-2px);
+
 }
 
-.media-list {
+
+.carousel-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 20px;
 }
 
-.media-list img,
-.media-list video {
-    max-width: 100%;
-    border-radius: 12px;
+.carousel-track {
+    display: flex;
+    gap: 15px;
+}
+
+.carousel-image {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.3s, z-index 0.3s;
+}
+
+
+.carousel-image:active {
+    transform: scale(2);
+    position: relative;
+    z-index: 10;
+}
+
+
+.project-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.github-link,
+.video-link {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 10px;
     border: 2px solid black;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.media-list img:hover,
-.media-list video:hover {
-    transform: scale(1.02);
-}
-
-.media-list p {
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
-    background-color: rgb(228, 146, 228);
-    color: #333;
-    line-height: 1.5;
-    text-align: justify;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 .github-link {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 16px;
-    background-color: black;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
+    background: linear-gradient(135deg, #b9f1c0, #fff9c4, #ffd9b3);
+    color: #1b3a2f;
 }
 
 .github-link:hover {
-    background-color: #333;
+    background: linear-gradient(135deg, #ffd9b3, #fff9c4, #b9f1c0);
     transform: translateY(-2px);
+}
+
+.video-link {
+    background: linear-gradient(135deg, #b9f1c0, #fff9c4, #ffd9b3);
+    color: #1b3a2f;
+}
+
+.video-link:hover {
+    background: linear-gradient(135deg, #ffd9b3, #fff9c4, #b9f1c0);
+    transform: translateY(-2px);
+}
+
+.project-detail p {
+
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fef3d6;
+    color: #1b3a2f;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+
+/*RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .carousel-image {
+        width: 150px;
+        height: 100px;
+    }
 }
