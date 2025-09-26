@@ -1,66 +1,68 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
-import "../ProjectList/ProjectList.css";
+import "./ProjectList.css";
 
 export default function ProjectList() {
-    // variabile di stato che contiene la lista dei progetti recuperati dal backend
+
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        // chiamata GET per recuperare la lista dei progetti
         axios.get("http://localhost:3000/projects")
             .then(res => setProjects(res.data))
             .catch(err => console.error(err));
     }, []);
 
     return (
-        <div className="project-list">
-            {projects.map((proj) => (
+        <div className="carousel-container">
 
-                <div key={proj.id} className="preview-card">
+            {/* motion permette di trascinare orizzontalmete il contenitore (in questo caso avendo 3 progetti il "carosello" non si vede)*/}
+            <motion.div
+                className="carousel-track"
+                drag="x"      // attiva il drag solo sull'asse orizzontale
+                dragConstraints={{ left: -1000, right: 0 }} // limita il massimo spostamento verso sinistra e destra
+                whileHover={{ cursor: "grab" }} // cambia il cursore quando passa sopra le card
+            >
 
-                    <div className="media-container">
-                        {/* se è un video */}
-                        {proj.type === "video" ? (
-                            <video className="preview-media"
+                {/* PROGETTI */}
+                {projects.map(proj => (
+                    <Link
+                        key={proj.id}
+                        to={`/projects/${proj.id}`}
+                        style={{ textDecoration: "none" }}
+                    >
+                        <motion.div
+                            className="carousel-card"
+                            whileHover={{ scale: 1.05, boxShadow: "0 8px 20px rgba(0,0,0,0.3)" }}   // le card si ingradiscono al passaggio del mouse
+                            transition={{ type: "spring", stiffness: 200 }} // effetto molla
+                        >
 
-                                autoPlay   // parti appena si apre la pagina
-                                loop      // ricomincia da capo quando finisce
-                                muted     // audio no
-                                playsInline // compatibile con dispositivi mobili
-                            >
-                                <source
-                                    src={`http://localhost:3000/uploads/${proj.cover}`}
-                                    type="video/mp4"
-                                />
-                                Il tuo browser non supporta i video.
-                            </video>
-                        ) : (
-                            // altrimenti se è un'immagine
-                            <img
-                                src={`http://localhost:3000/uploads/${proj.cover}`}
-                                alt={proj.title}
-                                className="preview-media"
-                            />
-                        )}
-                    </div>
+                            {/* SEZIONE VIDEO */}
+                            <div className="carousel-media-container">
+                                <video
+                                    className="carousel-preview-media"
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                >
+                                    <source
+                                        src={`http://localhost:3000/uploads/${proj.cover}`}
+                                        type="video/mp4"
+                                    />
+                                </video>
+                            </div>
 
-                    {/* contenitore descrizione card */}
-                    <div className="preview-content">
-                        <h3>{proj.title}</h3>
-                        <p>{proj.description}</p>
-                    </div>
-
-                    {/* link del dettaglio del progetto */}
-                    <div><Link to={`/projects/${proj.id}`} className="back-button"> Vai al dettaglio
-                    </Link></div>
-
-                </div>
-
-            ))
-            }
-        </div >
+                            {/* SEZIONE TESTO */}
+                            <div className="carousel-preview-content">
+                                <h3>{proj.title}</h3>
+                                <p>{proj.description}</p>
+                            </div>
+                        </motion.div>
+                    </Link>
+                ))}
+            </motion.div>
+        </div>
     );
 }
