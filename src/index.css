@@ -7,22 +7,22 @@
 
 }
 
-body {
-    background: linear-gradient(120deg, #ff7e5f, #feb47b, #ff9a76, #ff6f61);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+h1,
+h2,
+h3 {
+    font-family: 'Edu TAS Beginner', cursive;
+    font-weight: 600;
 }
 
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
+p,
+body {
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 1rem;
+    line-height: 2.5;
+}
 
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+button,
+a {
+    font-family: 'Edu TAS Beginner', cursive;
+    font-weight: 500;
 }
