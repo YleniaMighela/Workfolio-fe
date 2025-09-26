@@ -9,8 +9,7 @@ export default function HomePage() {
             <h1>Ciao! 👋 Sono Ylenia Mighela</h1>
 
             <p>
-                Benvenuti nel mio portfolio! Qui puoi scoprire i miei progetti più recenti,
-                le competenze acquisite e il mio percorso nel mondo dello sviluppo web.
+                Benvenuti nel mio portfolio! Qui puoi scoprire il mio percorso nel mondo dello sviluppo web.
             </p>
 
             <div className="container-hero">

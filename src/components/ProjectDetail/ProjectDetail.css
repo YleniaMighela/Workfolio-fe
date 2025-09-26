@@ -5,19 +5,40 @@
     align-items: center;
     max-width: 900px;
     margin: 40px auto;
-    padding: 30px;
-    border-radius: 12px;
-    background: #fff9c4;
+    padding: 15px;
+    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     text-align: center;
+    line-height: 1.6;
     color: #1b3a2f;
+    background: linear-gradient(135deg, #ffd9b3, #fff9c4, #b9f1c0);
 }
+
 
 .project-detail h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #1b3a2f;
 }
+
+.project-details-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #b9f1c0, #fff9c4, #ffd9b3);
+    line-height: 1.5;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.project-details-list li {
+    margin: 0.4rem;
+}
+
 
 .back-button {
     display: inline-block;
@@ -54,11 +75,12 @@
 }
 
 .carousel-image {
-    width: 200px;
-    height: 120px;
+    width: 300px;
+    height: 220px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    border: 1px solid black;
     cursor: pointer;
     flex-shrink: 0;
     transition: transform 0.3s, z-index 0.3s;
@@ -112,16 +134,8 @@
     transform: translateY(-2px);
 }
 
-.project-detail p {
 
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #fef3d6;
-    color: #1b3a2f;
-    line-height: 1.6;
-    text-align: justify;
-    margin-bottom: 20px;
-}
+
 
 
 /*RESPONSIVE MOBILE */

@@ -83,7 +83,16 @@ export default function ProjectDetail() {
             </div>
 
             {/* SEZIONE DETTAGLIO */}
-            <p>{project.details}</p>
+            {/* <p>{project.details}</p> */}
+            <div className="project-detail">
+                <ul className="project-details-list">
+                    {project.details.split("\n").map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+            </div>
+
+
         </div>
     );
 }

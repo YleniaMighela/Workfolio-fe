@@ -2,6 +2,7 @@
     overflow: hidden;
     width: 100%;
     padding: 20px 0;
+    min-height: 100vh;
 }
 
 .carousel-track {
@@ -17,6 +18,7 @@
     min-width: 250px;
     flex-shrink: 0;
     background: linear-gradient(135deg, #b9f1c0, #fff9c4, #ffd9b3);
+    border: 3px solid black;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     overflow: hidden;
