@@ -1,6 +1,14 @@
 .container_footer {
-    background-color: orange;
+    background: linear-gradient(135deg, #b9f1c0, #fff9c4, #ffd9b3);
     display: flex;
     justify-content: space-around;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
 
+.container_footer p {
+    color: #1b3a2f;
+    font-weight: bold;
 }
